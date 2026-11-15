@@ -1,0 +1,17 @@
+{
+  "name": "cloudsketch-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for CloudSketch AI: generate accurate architecture, database and process diagrams (C4, cloud, ERD, UML, sequence, flowchart and more) from Claude, Cursor or VS Code.",
+  "mcpName": "io.github.cloudsketchai/cloudsketch-mcp",
+  "license": "MIT",
+  "author": "CloudSketch AI <webadmin@cloudsketchai.com>",
+  "homepage": "https://cloudsketchai.com/mcp",
+  "repository": { "type": "git", "url": "git+https://github.com/cloudsketchai/cloudsketch-mcp.git" },
+  "bugs": { "url": "https://github.com/cloudsketchai/cloudsketch-mcp/issues", "email": "support@cloudsketchai.com" },
+  "type": "module",
+  "bin": { "cloudsketch-mcp": "server.mjs" },
+  "files": ["server.mjs", "lib.mjs", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "keywords": ["mcp", "model-context-protocol", "mcp-server", "diagram", "mermaid", "architecture", "c4", "erd", "uml", "claude", "cursor", "cloudsketch"],
+  "scripts": { "test": "node test.mjs" }
+}

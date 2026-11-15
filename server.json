@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.cloudsketchai/cloudsketch-mcp",
+  "title": "CloudSketch AI",
+  "description": "Generate accurate C4, cloud, ERD, UML, sequence and process diagrams (Mermaid) from plain English.",
+  "websiteUrl": "https://cloudsketchai.com/mcp",
+  "repository": { "url": "https://github.com/cloudsketchai/cloudsketch-mcp", "source": "github" },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "cloudsketch-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "CLOUDSKETCH_API_TOKEN", "description": "Personal API token from cloudsketchai.com (Account → API tokens). Needed for generate_diagram and check_credits.", "isRequired": false, "isSecret": true, "format": "string" }
+      ]
+    }
+  ]
+}
