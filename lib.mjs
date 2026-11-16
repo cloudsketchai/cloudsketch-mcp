@@ -112,7 +112,10 @@ export function splitViews(code) {
     const body = (parts[i + 1] || '').trim();
     if (body) views.push({ name: parts[i].charAt(0) + parts[i].slice(1).toLowerCase(), code: body });
   }
-  return views.length ? views : [{ name: '', code: text.trim() }];
+  if (!views.length) return [{ name: '', code: text.trim() }];
+  // Most types repeat the same diagram in every section: return it once, unnamed.
+  if (views.every((v) => v.code === views[0].code)) return [{ name: '', code: views[0].code }];
+  return views;
 }
 
 const textResult = (text, isError = false) => ({ content: [{ type: 'text', text }], ...(isError ? { isError: true } : {}) });

@@ -43,6 +43,7 @@ assert.strictEqual((await callTool('open_in_cloudsketch', { mermaid: 'graph TD\n
 assert.strictEqual(deepLink('x'), null);
 assert.deepStrictEqual(splitViews('===SYSTEM===\nC4Context\n===CONTAINER===\nC4Container\n').map((v) => v.name), ['System', 'Container']);
 assert.deepStrictEqual(splitViews('flowchart TD\nA-->B'), [{ name: '', code: 'flowchart TD\nA-->B' }]);
+assert.deepStrictEqual(splitViews('===SYSTEM===\nerDiagram\n  A ||--o{ B : has\n===CONTAINER===\nerDiagram\n  A ||--o{ B : has\n===COMPONENT===\nerDiagram\n  A ||--o{ B : has\n'), [{ name: '', code: 'erDiagram\n  A ||--o{ B : has' }], 'identical sections (ERD and most types) come back once');
 ok('open_in_cloudsketch makes the same link as the VS Code extension; list and view splitting');
 
 // ── No token ──
